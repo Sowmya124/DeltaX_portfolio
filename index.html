@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Sowmya Portfolio</title>
+    <style>
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      .modal-content {
+        background-color: #fff;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        border-radius: 10px;
+        line-height: 1.6;
+        text-align: center;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">Sowmya</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="#" id="aboutLink">About</a></li>
+          <li><a href="#" id="resumeLink">Resume</a></li>
+          <li><a href="#" id="linksLink">Links</a></li>
+          <li><a href="#" id="contactLink">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle">HELLO</p>
+          <h1 class="title">
+            I'm <span>Sowmya<br />an</span> Electrical Engineer
+          </h1>
+          <p class="description">
+            Welcome to my portfolio! I'm Sowmya, an aspiring electrical and
+            electronics engineer with a strong dedication to innovative projects
+            and problem-solving. I've developed skills through hands-on
+            experience in diverse areas like UI/UX design, digital electronics,
+            and project management.
+          </p>
+        </div>
+        <div class="image">
+          <img src="Profile Picture.png" alt="profile" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closeAbout">&times;</span>
+          <p>
+            I am Sowmya. My native is Karur, pursuing a BE in EEE at KEC. I
+            completed my HSC and SSLC in Karur. My academic journey has equipped
+            me with a strong foundation in technical skills such as Java, Proteus,
+            Dialux, and Keil. My area of interest lies in digital electronics,
+            where I have actively engaged in various projects and presentations. I
+            have developed a project called "Smart Door Bell". The goal of this
+            project was to enhance home security. Additionally, I have developed a
+            project "LPG gas level monitoring and leakage detection system", which
+            highlights my practical application of technical skills to solve
+            real-world problems. Through these projects, I developed not only
+            technical skills but also project management, problem-solving skills,
+            and teamwork abilities.These experiences have prepared me to take on complex challenges and
+            contribute effectively to your team.<br /><br /> My short-term goal is to secure a
+            position where I can apply my skills and gain experience with
+            projects, and enhance my technical and teamwork abilities. My
+            long-term goal is to grow into a leadership role, pursue more
+            knowledge, and work on projects within the same company where I get placed.</p>
+        </div>
+      </div>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeResume">&times;</span>
+        <img
+          src="resumee.png"
+          alt="Resume Image"
+          style="width: 100%; height: auto; border-radius: 10px"
+        />
+      </div>
+    </div>
+
+    <!-- Links Modal -->
+    <div id="linksModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeLinks">&times;</span>
+        <h2>My Profiles</h2>
+        <ul style="list-style: none; padding: 0; text-align: center">
+          <li>
+            <a
+              href="https://github.com/Sowmya124"
+              target="_blank"
+              style="text-decoration: none; color: #000; font-size: 18px"
+              >GitHub</a
+            >
+          </li>
+          
+          <li>
+            <a
+              href="https://www.linkedin.com/in/sowmya-e?"
+              target="_blank"
+              style="text-decoration: none; color: #000; font-size: 18px"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://leetcode.com/u/21EER086/"
+              target="_blank"
+              style="text-decoration: none; color: #000; font-size: 18px"
+              >LeetCode</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeContact">&times;</span>
+        <h2>Contact Me</h2>
+        <p><strong>Address:</strong> 1/166, Sinthayur, Vangal, Karur, Tamil Nadu</p>
+        <p><strong>Phone:</strong> +91 9345070852</p>
+      </div>
+    </div>
+
+    <script>
+      // About Modal functionality
+      const aboutLink = document.getElementById("aboutLink");
+      const aboutModal = document.getElementById("aboutModal");
+      const closeAbout = document.getElementById("closeAbout");
+
+      aboutLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        aboutModal.style.display = "block";
+      });
+
+      closeAbout.addEventListener("click", function () {
+        aboutModal.style.display = "none";
+      });
+
+      // Resume Modal functionality
+      const resumeLink = document.getElementById("resumeLink");
+      const resumeModal = document.getElementById("resumeModal");
+      const closeResume = document.getElementById("closeResume");
+
+      resumeLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        resumeModal.style.display = "block";
+      });
+
+      closeResume.addEventListener("click", function () {
+        resumeModal.style.display = "none";
+      });
+
+      // Links Modal functionality
+      const linksLink = document.getElementById("linksLink");
+      const linksModal = document.getElementById("linksModal");
+      const closeLinks = document.getElementById("closeLinks");
+
+      linksLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        linksModal.style.display = "block";
+      });
+
+      closeLinks.addEventListener("click", function () {
+        linksModal.style.display = "none";
+      });
+
+      // Contact Modal functionality
+      const contactLink = document.getElementById("contactLink");
+      const contactModal = document.getElementById("contactModal");
+      const closeContact = document.getElementById("closeContact");
+
+      contactLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        contactModal.style.display = "block";
+      });
+
+      closeContact.addEventListener("click", function () {
+        contactModal.style.display = "none";
+      });
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        if (event.target === aboutModal) aboutModal.style.display = "none";
+        if (event.target === resumeModal) resumeModal.style.display = "none";
+        if (event.target === linksModal) linksModal.style.display = "none";
+        if (event.target === contactModal) contactModal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
